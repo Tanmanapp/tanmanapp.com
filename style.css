@@ -1,145 +1,94 @@
-/* Color Palette */
 :root {
-    --forest-green: #2d5a27;
-    --sky-blue: #87ceeb;
-    --bone-white: #f9f7f2;
+    /* Somatic Healing Palette */
+    --pine-deep: #1a3c34;       /* Main brand/text color */
+    --pine-medium: #2d5a4f;     /* Buttons/Accents */
+    --sage-light: #d8e2dc;      /* Soft accents/backgrounds */
+    --earth-clay: #f4f1ea;      /* Primary background (bone/paper) */
     --white: #ffffff;
-    --text-color: #333;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--bone-white);
+    color: var(--pine-deep);
+    /* Pine forest inspired background gradient */
+    background: linear-gradient(180deg, #f4f1ea 0%, #e8ede9 100%);
     margin: 0;
-    padding: 0;
 }
 
 header {
     padding: 60px 20px;
-    background-color: var(--white);
+    background: var(--white);
     text-align: center;
-}
-
-section {
-    padding: 40px 20px;
-    text-align: center;
-    background-color: var(--bone-white);
-}
-
-/* Specific section highlights */
-section:nth-of-type(even) {
-    background-color: var(--white);
+    border-bottom: 2px solid var(--sage-light);
 }
 
 .cta-button {
     display: inline-block;
     padding: 15px 30px;
-    background-color: var(--forest-green);
+    /* Soft gradient for a "living" button feel */
+    background: linear-gradient(to right, var(--pine-deep), var(--pine-medium));
     color: var(--white);
     text-decoration: none;
     border-radius: 30px;
     font-weight: bold;
-    transition: background 0.3s ease;
+    transition: transform 0.2s ease;
 }
 
 .cta-button:hover {
-    background-color: #1e3d1a;
-}
-
-/* Footer styling */
-footer {
-    background: #1a1a1a;
-    color: #ccc;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-footer a {
-    color: var(--sky-blue);
-    text-decoration: none;
-}
-
-.legal-address {
-    margin-top: 20px;
-    font-size: 0.85em;
-    color: #888;
-}
-
-footer ul {
-    list-style: none;
-    padding: 0;
-}
-
-footer ul li {
-    display: block;
-    margin: 10px 0;
-}
-/* Card Container */
-.carousel-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-    flex-wrap: wrap;
+    transform: scale(1.05);
 }
 
 /* Card Styling with Gradient */
 .card {
-    background: linear-gradient(135deg, #f9f7f2 0%, #ffffff 100%);
-    border: 1px solid #e0e0e0;
-    border-radius: 15px;
-    padding: 20px;
+    background: linear-gradient(145deg, #ffffff 0%, #f9f9f9 100%);
+    border: 1px solid var(--sage-light);
+    border-radius: 20px;
+    padding: 25px;
     width: 280px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
+    box-shadow: 0 10px 20px rgba(26, 60, 52, 0.05);
 }
 
-.card:hover { transform: translateY(-10px); }
-
-/* Placeholder Images */
 .card-img {
-    width: 100px;
-    height: 100px;
-    background-color: #87ceeb; /* Sky blue placeholder */
+    width: 80px;
+    height: 80px;
+    background: var(--sage-light); /* Soft grounded color */
     border-radius: 50%;
     margin: 0 auto 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-weight: bold;
+    color: var(--pine-deep);
 }
 
-/* Container for stacked content blocks */
+/* Content Blocks */
 .content-section {
     max-width: 800px;
     margin: 40px auto;
     padding: 40px;
     border-radius: 20px;
-    background: var(--white);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    text-align: left;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px); /* Modern, airy feel */
+    border: 1px solid rgba(216, 226, 220, 0.5);
     display: flex;
     align-items: center;
     gap: 30px;
 }
 
-/* Optional: Alternate background colors for visual flow */
-.content-section:nth-of-type(even) {
-    background: var(--bone-white);
-}
-
 .feature-icon {
     font-size: 3rem;
-    color: var(--sky-blue);
-    min-width: 80px;
-    text-align: center;
+    color: var(--pine-medium);
 }
 
-.content-section h3 { color: var(--forest-green); margin-top: 0; }
-/* Typography Styles */
-.card h3 { font-family: 'Georgia', serif; color: #2d5a27; margin-bottom: 10px; }
-.card p { font-family: 'Arial', sans-serif; font-size: 0.9em; color: #666; }
+.content-section h3 { 
+    color: var(--pine-deep); 
+    font-family: 'Georgia', serif;
+}
+
+footer {
+    background: var(--pine-deep);
+    color: var(--sage-light);
+    padding: 40px 20px;
+    text-align: center;
+}
