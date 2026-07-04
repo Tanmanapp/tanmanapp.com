@@ -1,103 +1,150 @@
+/* Color Palette */
 :root {
-    /* Retaining Forest Palette for Accents/Cards */
-    --forest-deep: #0e2420;
-    --forest-mid: #1b3d36;
-    --sage-muted: #4a6761;
-    --moss-soft: #8ca39e;
-    --heather-glow: #c5d3cf;
+    --forest-green: #2d5a27;
+    --sky-blue: #87ceeb;
+    --bone-white: #f9f7f2;
+    --white: #ffffff;
+    --text-color: #333;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: var(--heather-glow);
-    
-    /* Requested 3-color gradient background */
+    color: var(--text-color);
+    /* Updated background gradient */
     background: linear-gradient(180deg, #3992f3 0%, #4d9bef 50%, #ffffff 100%);
     background-attachment: fixed;
     min-height: 100vh;
     margin: 0;
+    padding: 0;
 }
 
 header {
     padding: 60px 20px;
-    background: rgba(14, 36, 32, 0.8); /* Semi-transparent forest */
+    background-color: var(--white);
     text-align: center;
-    border-bottom: 1px solid var(--sage-muted);
 }
 
 section {
     padding: 40px 20px;
-    background: transparent; /* Allows gradient to show */
+    text-align: center;
+    background-color: var(--bone-white);
 }
 
-/* Sections now use a semi-transparent forest overlay for readability */
+/* Specific section highlights */
 section:nth-of-type(even) {
-    background-color: rgba(27, 61, 54, 0.2);
+    background-color: var(--white);
 }
 
 .cta-button {
     display: inline-block;
     padding: 15px 30px;
-    background: linear-gradient(90deg, var(--sage-muted), var(--forest-mid));
-    color: var(--heather-glow);
-    border: 1px solid var(--moss-soft);
+    background-color: var(--forest-green);
+    color: var(--white);
     text-decoration: none;
     border-radius: 30px;
     font-weight: bold;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease;
 }
 
 .cta-button:hover {
-    background: var(--sage-muted);
-    color: #ffffff;
+    background-color: #1e3d1a;
 }
 
-.card {
-    background: var(--forest-mid);
-    border: 1px solid var(--sage-muted);
-    border-radius: 15px;
-    padding: 20px;
-    width: 280px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.card-img {
-    width: 100px;
-    height: 100px;
-    background-color: var(--sage-muted);
-    border-radius: 50%;
-    margin: 0 auto 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--heather-glow);
-}
-
-.content-section {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 40px;
-    border-radius: 20px;
-    background: var(--forest-mid);
-    border: 1px solid var(--sage-muted);
-    text-align: left;
-    display: flex;
-    gap: 30px;
-}
-
-.content-section h3 { 
-    color: var(--heather-glow); 
-}
-
+/* Footer styling */
 footer {
-    background: #081a17;
-    color: var(--moss-soft);
+    background: #1a1a1a;
+    color: #ccc;
     padding: 40px 20px;
     text-align: center;
 }
 
 footer a {
-    color: var(--heather-glow);
+    color: var(--sky-blue);
+    text-decoration: none;
 }
+
+.legal-address {
+    margin-top: 20px;
+    font-size: 0.85em;
+    color: #888;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    display: block;
+    margin: 10px 0;
+}
+
+/* Card Container */
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+/* Card Styling with Gradient */
+.card {
+    background: linear-gradient(135deg, #f9f7f2 0%, #ffffff 100%);
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.card:hover { transform: translateY(-10px); }
+
+/* Placeholder Images */
+.card-img {
+    width: 100px;
+    height: 100px;
+    background-color: #87ceeb; /* Sky blue placeholder */
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+/* Container for stacked content blocks */
+.content-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 20px;
+    background: var(--white);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Optional: Alternate background colors for visual flow */
+.content-section:nth-of-type(even) {
+    background: var(--bone-white);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: var(--sky-blue);
+    min-width: 80px;
+    text-align: center;
+}
+
+.content-section h3 { color: var(--forest-green); margin-top: 0; }
+
+/* Typography Styles */
+.card h3 { font-family: 'Georgia', serif; color: #2d5a27; margin-bottom: 10px; }
+.card p { font-family: 'Arial', sans-serif; font-size: 0.9em; color: #666; }
