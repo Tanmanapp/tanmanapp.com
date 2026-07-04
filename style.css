@@ -12,7 +12,7 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     
-    /* Updated background with your specific 3-color gradient */
+    /* THE GRADIENT IS HERE */
     background: linear-gradient(180deg, #3992f3 0%, #4d9bef 50%, #ffffff 100%);
     background-attachment: fixed;
     min-height: 100vh;
@@ -20,21 +20,22 @@ body {
     padding: 0;
 }
 
-header {
-    padding: 60px 20px;
-    background-color: var(--white);
-    text-align: center;
+/* Updated to transparent so gradient shows through */
+header, section, .content-section {
+    background: transparent !important;
 }
 
-section {
-    padding: 40px 20px;
+/* If you still want the cards to stand out, you can keep them solid 
+   or make them slightly transparent to see the blue through them */
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 20px;
+    width: 280px;
     text-align: center;
-    background-color: var(--bone-white);
-}
-
-/* Specific section highlights */
-section:nth-of-type(even) {
-    background-color: var(--white);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
 }
 
 .cta-button {
@@ -52,7 +53,6 @@ section:nth-of-type(even) {
     background-color: #1e3d1a;
 }
 
-/* Footer styling */
 footer {
     background: #1a1a1a;
     color: #ccc;
@@ -65,49 +65,12 @@ footer a {
     text-decoration: none;
 }
 
-.legal-address {
-    margin-top: 20px;
-    font-size: 0.85em;
-    color: #888;
-}
-
-footer ul {
-    list-style: none;
-    padding: 0;
-}
-
-footer ul li {
-    display: block;
-    margin: 10px 0;
-}
-/* Card Container */
-.carousel-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-    flex-wrap: wrap;
-}
-
-/* Card Styling with Gradient */
-.card {
-    background: linear-gradient(135deg, #f9f7f2 0%, #ffffff 100%);
-    border: 1px solid #e0e0e0;
-    border-radius: 15px;
-    padding: 20px;
-    width: 280px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
-}
-
 .card:hover { transform: translateY(-10px); }
 
-/* Placeholder Images */
 .card-img {
     width: 100px;
     height: 100px;
-    background-color: #87ceeb; /* Sky blue placeholder */
+    background-color: #87ceeb;
     border-radius: 50%;
     margin: 0 auto 15px;
     display: flex;
@@ -117,25 +80,6 @@ footer ul li {
     font-weight: bold;
 }
 
-/* Container for stacked content blocks */
-.content-section {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 40px;
-    border-radius: 20px;
-    background: var(--white);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    text-align: left;
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-/* Optional: Alternate background colors for visual flow */
-.content-section:nth-of-type(even) {
-    background: var(--bone-white);
-}
-
 .feature-icon {
     font-size: 3rem;
     color: var(--sky-blue);
@@ -143,7 +87,18 @@ footer ul li {
     text-align: center;
 }
 
+.content-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
 .content-section h3 { color: var(--forest-green); margin-top: 0; }
-/* Typography Styles */
 .card h3 { font-family: 'Georgia', serif; color: #2d5a27; margin-bottom: 10px; }
 .card p { font-family: 'Arial', sans-serif; font-size: 0.9em; color: #666; }
