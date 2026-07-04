@@ -1,94 +1,99 @@
 :root {
-    /* Somatic Healing Palette */
-    --pine-deep: #1a3c34;       /* Main brand/text color */
-    --pine-medium: #2d5a4f;     /* Buttons/Accents */
-    --sage-light: #d8e2dc;      /* Soft accents/backgrounds */
-    --earth-clay: #f4f1ea;      /* Primary background (bone/paper) */
-    --white: #ffffff;
+    /* Deep Somatic Forest Palette */
+    --forest-deep: #0e2420;      /* Primary Background / Deep Shadows */
+    --forest-mid: #1b3d36;       /* Section Backgrounds */
+    --sage-muted: #4a6761;       /* UI Elements / Borders */
+    --moss-soft: #8ca39e;        /* Text / Secondary Accents */
+    --heather-glow: #c5d3cf;     /* Highlights / Primary Text */
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
     line-height: 1.6;
-    color: var(--pine-deep);
-    /* Pine forest inspired background gradient */
-    background: linear-gradient(180deg, #f4f1ea 0%, #e8ede9 100%);
+    color: var(--heather-glow);
+    background-color: var(--forest-deep);
     margin: 0;
-} 
+}
 
 header {
     padding: 60px 20px;
-    background: var(--white);
+    background: linear-gradient(180deg, var(--forest-mid) 0%, var(--forest-deep) 100%);
     text-align: center;
-    border-bottom: 2px solid var(--sage-light);
+    border-bottom: 1px solid var(--sage-muted);
+}
+
+section {
+    padding: 40px 20px;
+    background-color: var(--forest-deep);
+}
+
+section:nth-of-type(even) {
+    background-color: var(--forest-mid);
 }
 
 .cta-button {
     display: inline-block;
     padding: 15px 30px;
-    /* Soft gradient for a "living" button feel */
-    background: linear-gradient(to right, var(--pine-deep), var(--pine-medium));
-    color: var(--white);
+    /* Soft gradient matching the forest canopy */
+    background: linear-gradient(90deg, var(--sage-muted), var(--forest-mid));
+    color: var(--heather-glow);
+    border: 1px solid var(--moss-soft);
     text-decoration: none;
     border-radius: 30px;
     font-weight: bold;
-    transition: transform 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .cta-button:hover {
-    transform: scale(1.05);
+    background: var(--sage-muted);
+    color: var(--forest-deep);
 }
 
-/* Card Styling with Gradient */
 .card {
-    background: linear-gradient(145deg, #ffffff 0%, #f9f9f9 100%);
-    border: 1px solid var(--sage-light);
-    border-radius: 20px;
-    padding: 25px;
+    background: var(--forest-mid);
+    border: 1px solid var(--sage-muted);
+    border-radius: 15px;
+    padding: 20px;
     width: 280px;
     text-align: center;
-    box-shadow: 0 10px 20px rgba(26, 60, 52, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .card-img {
-    width: 80px;
-    height: 80px;
-    background: var(--sage-light); /* Soft grounded color */
+    width: 100px;
+    height: 100px;
+    background-color: var(--sage-muted);
     border-radius: 50%;
     margin: 0 auto 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--pine-deep);
+    color: var(--forest-deep);
 }
 
-/* Content Blocks */
 .content-section {
     max-width: 800px;
     margin: 40px auto;
     padding: 40px;
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px); /* Modern, airy feel */
-    border: 1px solid rgba(216, 226, 220, 0.5);
+    background: var(--forest-mid);
+    border: 1px solid var(--sage-muted);
+    text-align: left;
     display: flex;
-    align-items: center;
     gap: 30px;
 }
 
-.feature-icon {
-    font-size: 3rem;
-    color: var(--pine-medium);
-}
-
 .content-section h3 { 
-    color: var(--pine-deep); 
-    font-family: 'Georgia', serif;
+    color: var(--heather-glow); 
 }
 
 footer {
-    background: var(--pine-deep);
-    color: var(--sage-light);
+    background: #081a17;
+    color: var(--moss-soft);
     padding: 40px 20px;
     text-align: center;
+}
+
+footer a {
+    color: var(--heather-glow);
 }
