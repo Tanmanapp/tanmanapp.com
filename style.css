@@ -1,40 +1,44 @@
 :root {
-    /* Deep Somatic Forest Palette */
-    --forest-deep: #0e2420;      /* Primary Background / Deep Shadows */
-    --forest-mid: #1b3d36;       /* Section Backgrounds */
-    --sage-muted: #4a6761;       /* UI Elements / Borders */
-    --moss-soft: #8ca39e;        /* Text / Secondary Accents */
-    --heather-glow: #c5d3cf;     /* Highlights / Primary Text */
+    /* Retaining Forest Palette for Accents/Cards */
+    --forest-deep: #0e2420;
+    --forest-mid: #1b3d36;
+    --sage-muted: #4a6761;
+    --moss-soft: #8ca39e;
+    --heather-glow: #c5d3cf;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, sans-serif;
     line-height: 1.6;
     color: var(--heather-glow);
-    background-color: var(--forest-deep);
+    
+    /* Requested 3-color gradient background */
+    background: linear-gradient(180deg, #3992f3 0%, #4d9bef 50%, #ffffff 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
     margin: 0;
 }
 
 header {
     padding: 60px 20px;
-    background: linear-gradient(180deg, var(--forest-mid) 0%, var(--forest-deep) 100%);
+    background: rgba(14, 36, 32, 0.8); /* Semi-transparent forest */
     text-align: center;
     border-bottom: 1px solid var(--sage-muted);
 }
 
 section {
     padding: 40px 20px;
-    background-color: var(--forest-deep);
+    background: transparent; /* Allows gradient to show */
 }
 
+/* Sections now use a semi-transparent forest overlay for readability */
 section:nth-of-type(even) {
-    background-color: var(--forest-mid);
+    background-color: rgba(27, 61, 54, 0.2);
 }
 
 .cta-button {
     display: inline-block;
     padding: 15px 30px;
-    /* Soft gradient matching the forest canopy */
     background: linear-gradient(90deg, var(--sage-muted), var(--forest-mid));
     color: var(--heather-glow);
     border: 1px solid var(--moss-soft);
@@ -46,7 +50,7 @@ section:nth-of-type(even) {
 
 .cta-button:hover {
     background: var(--sage-muted);
-    color: var(--forest-deep);
+    color: #ffffff;
 }
 
 .card {
@@ -56,7 +60,7 @@ section:nth-of-type(even) {
     padding: 20px;
     width: 280px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .card-img {
@@ -68,7 +72,7 @@ section:nth-of-type(even) {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--forest-deep);
+    color: var(--heather-glow);
 }
 
 .content-section {
